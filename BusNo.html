@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Search</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: lightblue;
+        }
+        .main{
+            position: relative;
+            margin: auto;
+            top: 60px;
+            width: 50%;
+            background: green;
+            height: 60px;
+            padding: 20px;
+        }
+        input[type="text"]{
+            margin: auto;
+            width: 90%;
+            height: 40px;
+            border-radius: 30px;
+            outline: none;
+            border: solid wheat;
+            text-align: center;
+            font-size: 25px;
+            
+        }
+        input[type="submit"]{
+            width:17%;
+            height: 40px;
+            border-radius: 10px;
+            outline: none;
+            border: solid wheat;
+            text-align: center;
+            font-size: 25px;
+        }
+         i{
+            font: 100px;
+            color: lightblue;
+        }
+        #display{
+            position: relative;
+            margin: auto;
+            top:100px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form name="fm" >
+            <input type="text" name="input" placeholder="Enter Bus Number" onkeyup="sendInfo()">
+            <!--<input type="submit" value="Search">-->
+        </form>
+    </div>
+    <div id="display" ></div>
+    <script>
+                    var req = new XMLHttpRequest();  
+                    function sendInfo()  
+                    {  
+                        var v=document.fm.input.value;  
+                        var url="search.jsp?x="+v; 
+                    
+                        try  
+                        {  
+                            req.onreadystatechange=getInfo;  
+                            req.open("POST",url,true);  
+                            req.send();  
+                        }  
+                        catch(e)  
+                        {  
+                        alert("Unable to connect to server");  
+                        }  
+                    }  
+
+                    function getInfo(){  
+                    if(req.readyState==4){  
+                    var val=req.responseText;  
+                    document.getElementById('display').innerHTML=val;  
+                    }  
+                    }  
+            </script>
+</body>
+</html>

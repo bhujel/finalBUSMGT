@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="CSS/login1.css">
+</head>
+<body>
+    <div class="log">
+        <img src="Image/log.png">
+            <h1>login</h1>
+            <form name="myform" action="LoginServlet" onsubmit="return validDate()" method="post">
+            <p>UserID</p>
+            <input type="text" name="uid" placeholder="Enter Username" id="name">
+            <p>Password</p>
+            <input type="password" name="pwd" placeholder="Enter Password" id="pwd">
+            <p class="acc">Account Type?</p><br>
+                <select name="type" class="type" id="sel">
+                    <option value="Select"> Select </option>
+                    <option value="Student"> Student</option>
+                    <option value="Staff">Staff</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Faculty">Faculty</option>
+                </select><br><br>
+                <input type="submit" name="sub" value="Login"><br>
+            <a href="#">Forgot Password?</a><br>
+            <a href="signup.html">Dont have Account?</a>
+        </form>
+    </div>
+    <script>
+        function validDate(){
+            var v1 = document.forms["myform"]["nm"].value;
+            var v2 = document.forms["myform"]["pwd"].value;
+            var v3 = document.forms["myform"]["type"].value;
+            console.log(v1);
+            if( v1 == ""){
+                alert("username cannot be empty");
+                document.getElementById("name").style.borderColor="red";
+                return false;
+            }
+            if( v2 == ""){
+                alert("incorrect password");
+                document.getElementById("pwd").style.borderColor="red";
+                return false;
+                 }
+            if( v3 == "Select"){
+                alert("Please select Account type");
+                document.getElementById("sel").style.borderColor="red";
+                return false;
+                }
+                return true;
+            }
+    </script>
+</body>
+</html>

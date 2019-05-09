@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Staff Page</title>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="CSS/admin1.css">
+        <script type="text/javascript" src="jquery-3.3.1.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/animate.css"/>
+        <script>
+            $(document).ready(function(){
+                $("#c1").click(function(){
+                    $("#c2").toggle(2000);
+                });
+                
+                $("#u1").click(function(){
+                    $("#u2").toggle(2000);
+                });
+                $("#e1").click(function(){
+                    $("#e2").toggle(2000);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="nav">
+            <div id="ad">
+                <p>STAFF</p>
+                <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            </div>
+            <div id="logout">
+                <a href="login.html"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="sidebar1">
+                <div class="profile">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <p>BIRENDRA BHUJEL</p>
+                </div>
+                <div class="db">
+                    <i class="fa fa-th" aria-hidden="true">&nbsp;&nbsp; DashBoard</i>
+                </div>
+                <div class="std">
+                    <i class="fa fa-users" aria-hidden="true">&nbsp;&nbsp; Student</i>
+                </div>
+                <div class="fal">
+                    <i class="fa fa-user-circle-o" aria-hidden="true">&nbsp;&nbsp; Faculty</i>
+                </div>
+            </div>
+            <div class="sidebar2">
+                <div class="insidebar1">
+                    <a href="#" id="c1" class="crt"><i class="fa fa-plus-circle" aria-hidden="true">&nbsp;&nbsp;CREATE</i></a>
+                    <a href="#" id="u1" class="upd" ><i class="fa fa-pencil-square-o" aria-hidden="true">&nbsp;&nbsp;UPDATE</i></a>
+                    <a href="#" id="e1" class="del"><i class="fa fa-pencil-square-o" aria-hidden="true">&nbsp;&nbsp;EDIT</i></a>
+                    <a href="view.html" class="vi"><i class="fa fa-eye" aria-hidden="true">&nbsp;&nbsp;VIEW</i></a>
+                </div>
+                <hr size="2" color="white" width="99%">
+                <div class="insidebar2">
+                    <div id="c2" >
+                        <form name="createForm" action="#" method="GET" onsubmit="#">
+                           <input type="text" placeholder="Enter Bus No"><br>
+                            <input type="text" placeholder="Enter Driver Name"><br>
+                            <input type="text" placeholder="Enter Driver ID"><br>
+                            <input type="text" placeholder="Enter Driver Contact"><br>
+                            <input type="text" placeholder="Enter Route"><br>
+                            <input type="text" placeholder="Enter Shift"><br>
+                            <input type="submit" value="CREATE">
+                        </form>
+                    </div>
+                    <div id="u2" >
+                        <form name="createForm" action="#" method="GET" onsubmit="#">
+                           <input type="text" placeholder="Enter Bus No"><br>
+                            <input type="text" placeholder="Enter Driver Name"><br>
+                            <input type="text" placeholder="Enter Driver ID"><br>
+                            <input type="text" placeholder="Enter Driver Contact"><br>
+                            <input type="text" placeholder="Enter Route"><br>
+                            <input type="text" placeholder="Enter Shift"><br>
+                            <input type="submit" value="UPDATE">
+                        </form>
+                    </div>
+                    <div id="e2" >
+                        <form name="createForm" action="#" method="GET" onsubmit="#" >
+                           <input type="text" placeholder="Enter Bus No"><br>
+                            <input type="text" placeholder="Enter Driver Name"><br>
+                            <input type="text" placeholder="Enter Driver ID"><br>
+                            <input type="text" placeholder="Enter Driver Contact"><br>
+                            <input type="text" placeholder="Enter Route"><br>
+                            <input type="text" placeholder="Enter Shift"><br>
+                            <input type="submit" value="EDIT">
+                        </form>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </body>
+</html>

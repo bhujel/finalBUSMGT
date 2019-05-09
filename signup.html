@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SignUp page</title>
+    <link rel="stylesheet" type="text/css" href="CSS/signup.css">
+</head>
+<body>
+    <div class="main">
+        <form name="signup" action="SignUpServlet" method="post" onsubmit="return valid()">
+        First Name :&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="fn" id="nm"><br>
+        Last Name  : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="ln"><br>
+        User ID : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="ui" id="u"><br>
+        New Password : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="password" name="psw" id="psw1"><br>
+        Rewrite Password : &nbsp;<input type="password" name="rpsw" id="rpsw1"><br>
+        Ph No  : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="ph" id="ph1"><br>
+        Email ID :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="email" name="em" id="em1"><br>
+        Pick Up Point : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="pik" id="pik1"><br>
+        Address:<br> <textarea rows="4" cols="30" name="add" id="add1"></textarea><br>
+        Gender<br>
+        <input type="radio" name="gender" value="male" >Male
+        <input type="radio" name="gender" value="female">Female
+        <input type="radio" name="gender" value="other">Other<br><br>
+        Account Type ?&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name="type" class="type" id="sel">
+            <option value="Select"> Select </option>
+            <option value="Student"> Student </option>
+            <option value="Staff">Staff</option>
+            <option value="Admin">Admin</option>
+            <option value="Faculty">Faculty</option>
+        </select><br>
+        <input type="submit" name="sub" value="Sign Up">
+        </form>
+    </div>
+    <script>
+        function valid(){
+            
+            var v1 = document.forms["signup"]["fn"].value;
+            var v2 = document.forms["signup"]["ui"].value;
+            
+            var pwd1 = document.forms["signup"]["psw"].value;
+            var pwd2 = document.forms["signup"]["rpsw"].value;
+            
+            var lc = /[a-z]/g;
+            var uc = /[A-Z]/g;
+            var num = /[0-9]/g;
+            
+             var v3 = document.forms["signup"]["ph"].value;
+             var v4 = document.forms["signup"]["em"].value;
+             
+             var v5 = document.forms["signup"]["pik"].value;
+             var v6 = document.forms["signup"]["add"].value;
+             
+             var v7 = document.forms["signup"]["gender"].value;
+             var v8 = document.forms["signup"]["type"].value;
+             
+            if( v1 == "" ){
+                alert("Name cannot be empty");
+            document.getElementById("nm").style.borderColor="red";
+            return false;
+            }
+            else if( v2 == "" ){
+                alert("User Id cannot be empty");
+            document.getElementById("u").style.borderColor="red";
+            return false;
+            }
+            else if ( pwd1 == ""){
+                
+            alert("Password cannot be empty");
+            document.getElementById("psw1").style.borderColor="red";
+            return false;
+                
+            }
+            else if ( pwd2 == "" || pwd1 != pwd2 ){
+                
+            alert("Please confirm your password");
+            document.getElementById("rpsw1").style.borderColor="red";
+            return false;
+                
+            }
+           else if( v3 == "" ){
+                alert("Phone Number cannot be empty");
+            document.getElementById("ph1").style.borderColor="red";
+            return false;
+            }
+            else if( v4 == "" ){
+                alert("Email cannot be empty");
+            document.getElementById("em1").style.borderColor="red";
+            return false;
+            }
+            else if( v5 == "" ){
+                alert("pickup point cannot be empty");
+            document.getElementById("pik1").style.borderColor="red";
+            return false;
+            }
+            else if( v6 == "" ){
+                alert("address cannot be empty");
+            document.getElementById("add1").style.borderColor="red";
+            return false;
+            }
+            else if( v7 == "" ){
+                alert("select the gender");
+            return false;
+            }
+            else if( v8 == "Select"){
+            alert("Please select Account type");
+            document.getElementById("sel").style.borderColor="red";
+            return false;
+            }
+            else 
+        return true;
+        }
+    </script>
+</body>
+</html>
